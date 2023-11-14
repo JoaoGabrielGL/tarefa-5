@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada do Número 5</title>
+</head>
+<body>
+
+<script>
+    let numero = 5;
+
+    let tabela = document.createElement("table");
+
+    for (let i = 1; i <= 10; i++) {
+        let linha = tabela.insertRow();
+
+        let celulaMultiplicador = linha.insertCell(0);
+        let celulaResultado = linha.insertCell(1);
+
+        celulaMultiplicador.textContent = numero + " x " + i;
+        celulaResultado.textContent = numero * i;
+    }
+
+    document.body.appendChild(tabela);
+</script>
+
+</body>
+</html>

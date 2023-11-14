@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Custo de Carro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculadora de Custo de Carro</h2>
+
+    <label for="custoFabrica">Custo de Fábrica:</label>
+    <input type="number" id="custoFabrica" />
+
+    <label for="percDistribuidor">% Distribuidor:</label>
+    <input type="number" id="percDistribuidor" />
+
+    <label for="percImpostos">% Impostos:</label>
+    <input type="number" id="percImpostos" />
+
+    <button onclick="calcularCusto()">Calcular</button>
+
+    <br>
+
+    <label for="valorfinal">Valor Final:</label>
+    <input type="text" id="valorfinal" readonly />
+
+    <script>
+        function calcularCusto() {
+            // Obter os valores dos inputs
+            var custoFabrica = parseFloat(document.getElementById('custoFabrica').value);
+            var percDistribuidor = parseFloat(document.getElementById('percDistribuidor').value);
+            var percImpostos = parseFloat(document.getElementById('percImpostos').value);
+
+            // Calcular o custo final
+            var custoFinal = custoFabrica + (custoFabrica * (percDistribuidor / 100)) + (custoFabrica * (percImpostos / 100));
+
+            // Exibir o resultado no input "valorfinal"
+            document.getElementById('valorfinal').value = custoFinal.toFixed(2);
+        }
+    </script>
+</body>
+</html>
